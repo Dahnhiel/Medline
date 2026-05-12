@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teal-900: #063d3d;
+  --color-teal-800: #0b5e5e;
+  --color-teal-700: #0B6E6E;
+  --color-teal-600: #0d8080;
+  --color-teal-500: #10a0a0;
+  --color-teal-400: #2bbfbf;
+  --color-teal-100: #e6f7f7;
+  --color-teal-50: #f0fbfb;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8c97a;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #1a2e2e;
+  background: #ffffff;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-link {
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: #1a2e2e;
+  transition: color 0.2s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0B6E6E;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0B6E6E;
+}
+
+.btn-primary {
+  background: #0B6E6E;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #063d3d;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #0B6E6E;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  border: 2px solid #0B6E6E;
+  transition: all 0.2s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #0B6E6E;
+  color: white;
+}
+
+.btn-white {
+  background: white;
+  color: #0B6E6E;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  border: 2px solid white;
+  transition: all 0.2s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-white:hover {
+  background: transparent;
+  color: white;
+}
+
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0B6E6E;
+}
+
+.hero-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(11, 110, 110, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(11, 110, 110, 0.06) 0%, transparent 40%);
+}
+
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(11, 110, 110, 0.12);
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.divider-teal {
+  width: 60px;
+  height: 3px;
+  background: #0B6E6E;
+  margin: 1rem 0 1.5rem;
+}
+
+.divider-gold {
+  width: 60px;
+  height: 3px;
+  background: #c9a84c;
+  margin: 1rem 0 1.5rem;
+}
+
+input, textarea, select {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1e8e8;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #1a2e2e;
+  background: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #0B6E6E;
+  box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.1);
+}
+
+.form-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #1a2e2e;
+  margin-bottom: 0.4rem;
+}
+
+@layer utilities {
+  .animate-bounce-slow {
+    animation: bounce-slow 4s infinite ease-in-out;
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L15 0H45L30 30Z' fill='%230b6e6e' fill-opacity='0.03'/%3E%3C/svg%3E");
+}
